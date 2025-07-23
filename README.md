@@ -50,4 +50,7 @@ interface CarComponent {
 }
 
 
+Scope Annotation:-
+@Singleton  // single instance in whole app lifecycle
+@Custom scope // for activity or fragment - single instance till the lifecycle of that particular fragment or activity
 
