@@ -19,4 +19,35 @@ class Car {
     fun drive() = engine.start()
 }
 
- 
+ 🟣 2. @Module
+👉 “Here are my instructions for how to build objects.”
+A Dagger Module contains functions that tell Dagger how to provide dependencies.
+@Module
+class EngineModule {
+
+    @Provides
+    fun provideEngine(): Engine {
+        return Engine()
+    }
+}
+
+🟣 3. @Provides
+👉 “Here’s how to create this object.”
+Used inside a Module to provide dependencies that can’t use @Inject on constructor (e.g., 3rd-party libs).
+  @Provides
+  @Singleton
+    fun provideEngine(): Engine {
+        return Engine()
+    }
+
+🟡 4. @Component
+👉 “I’m the bridge between @Inject and @Module.”
+A Dagger Component is an interface that tells Dagger what to inject and where.
+
+@Component(modules = [EngineModule::class])
+interface CarComponent {
+    fun inject(car: Car)
+}
+
+
+
