@@ -61,3 +61,8 @@ Purpose: Used for global singleton dependencies.
 Instance Lifecycle: A single instance is created for the entire app lifecycle.
 Use Case: For classes like Retrofit client, Room database, Repositories, etc., which should exist once globally.
 
+Application (@Singleton)
+   └── Activity (@ActivityScoped)
+         └── Fragment (@FragmentScoped or @CustomScope)
+
+
