@@ -49,8 +49,15 @@ interface CarComponent {
     fun inject(car: Car)
 }
 
+Scope Annotations
+🔹 @CustomScope
+Purpose: Used for a specific Activity or Fragment.
+Instance Lifecycle: A single instance is created and shared only within the lifecycle of that particular Activity or Fragment.
+Use Case: When you want dependencies scoped to the screen's lifecycle (not shared globally).
 
-Scope Annotation:-
-@Singleton  // single instance in whole app lifecycle
-@Custom scope // for activity or fragment - single instance till the lifecycle of that particular fragment or activity
+
+🔹 @Singleton
+Purpose: Used for global singleton dependencies.
+Instance Lifecycle: A single instance is created for the entire app lifecycle.
+Use Case: For classes like Retrofit client, Room database, Repositories, etc., which should exist once globally.
 
